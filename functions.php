@@ -1,6 +1,8 @@
 // functions.php
 
-// Register Custom Post Types
+/**
+ * Register Custom Post Types
+ */
 function register_custom_post_types() {
     // Register News Post Type
     register_post_type('news', array(
@@ -52,7 +54,9 @@ function register_custom_post_types() {
 }
 add_action('init', 'register_custom_post_types');
 
-// Register Custom Taxonomy for News Categories
+/**
+ * Register Custom Taxonomy for News Categories
+ */
 function create_news_taxonomy() {
     $labels = array(
         'name'              => _x('News Categories', 'taxonomy general name'),
@@ -81,7 +85,9 @@ function create_news_taxonomy() {
 }
 add_action('init', 'create_news_taxonomy', 0);
 
-// Register Custom Taxonomy for Games Categories
+/**
+ * Register Custom Taxonomy for Games Categories
+ */
 function create_games_taxonomy() {
     $labels = array(
         'name'              => _x('Games Categories', 'taxonomy general name'),
@@ -110,7 +116,9 @@ function create_games_taxonomy() {
 }
 add_action('init', 'create_games_taxonomy', 0);
 
-// Enqueue JavaScript for Carousel
+/**
+ * Enqueue JavaScript for Carousel
+ */
 function enqueue_scripts() {
     wp_enqueue_script('carousel-script', get_template_directory_uri() . '/js/main.js', array(), null, true);
 }
